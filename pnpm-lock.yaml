@@ -16,6 +16,11 @@ overrides:
   '@vue/shared': 3.5.14
   vue: 3.5.14
 
+patchedDependencies:
+  unctx:
+    hash: 5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431
+    path: patches/unctx.patch
+
 importers:
 
   .:
@@ -3742,7 +3747,7 @@ snapshots:
       semver: 7.7.3
       tinyglobby: 0.2.15
       ufo: 1.6.3
-      unctx: 2.5.0
+      unctx: 2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431)
       untyped: 2.0.0
     transitivePeerDependencies:
       - magicast
@@ -3767,7 +3772,7 @@ snapshots:
       semver: 7.7.3
       tinyglobby: 0.2.15
       ufo: 1.6.3
-      unctx: 2.5.0
+      unctx: 2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431)
       untyped: 2.0.0
     transitivePeerDependencies:
       - magicast
@@ -3797,7 +3802,7 @@ snapshots:
       rou3: 0.7.12
       std-env: 3.10.0
       ufo: 1.6.3
-      unctx: 2.5.0
+      unctx: 2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431)
       unstorage: 1.17.4(db0@0.3.4)(ioredis@5.9.2)
       vue: 3.5.14
       vue-bundle-renderer: 2.2.0
@@ -5504,7 +5509,7 @@ snapshots:
       ufo: 1.6.3
       ultrahtml: 1.6.0
       uncrypto: 0.1.3
-      unctx: 2.5.0
+      unctx: 2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431)
       unenv: 2.0.0-rc.24
       unimport: 5.6.0
       unplugin-utils: 0.3.1
@@ -5630,7 +5635,7 @@ snapshots:
       ufo: 1.6.3
       ultrahtml: 1.6.0
       uncrypto: 0.1.3
-      unctx: 2.5.0
+      unctx: 2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431)
       unimport: 5.6.0
       unplugin: 2.3.11
       unplugin-vue-router: 0.19.2(@vue/compiler-sfc@3.6.0-beta.4)(vue-router@4.6.4(vue@3.5.14))(vue@3.5.14)
@@ -6399,7 +6404,7 @@ snapshots:
 
   uncrypto@0.1.3: {}
 
-  unctx@2.5.0:
+  unctx@2.5.0(patch_hash=5abbabacf61c8300544e755f3ba13613a36c0440e0c0a1884c65d5556bba2431):
     dependencies:
       acorn: 8.15.0
       estree-walker: 3.0.3
