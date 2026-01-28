@@ -1,0 +1,48 @@
+{
+  "name": "empty-nuxt-project",
+  "type": "module",
+  "private": true,
+  "version": "20.19.6",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "leaks:start": "npm run build && node .output/server/index.mjs",
+    "debug": "npm run build && node --inspect --expose-gc .output/server/index.mjs"
+  },
+  "dependencies": {
+    "nuxt": "^4.2.2",
+    "vue": "3.5.14",
+    "vue-router": "^4.6.4"
+  },
+  "overrides": {
+    "@vue/compiler-core": "3.5.14",
+    "@vue/compiler-dom": "3.5.14",
+    "@vue/compiler-sfc": "3.5.14",
+    "@vue/compiler-ssr": "3.5.14",
+    "@vue/reactivity": "3.5.14",
+    "@vue/runtime-core": "3.5.14",
+    "@vue/runtime-dom": "3.5.14",
+    "@vue/server-renderer": "3.5.14",
+    "@vue/shared": "3.5.14",
+    "vue": "3.5.14"
+  },
+  "pnpm": {
+    "overrides": {
+      "@vue/compiler-core": "3.5.14",
+      "@vue/compiler-dom": "3.5.14",
+      "@vue/compiler-sfc": "3.5.14",
+      "@vue/compiler-ssr": "3.5.14",
+      "@vue/reactivity": "3.5.14",
+      "@vue/runtime-core": "3.5.14",
+      "@vue/runtime-dom": "3.5.14",
+      "@vue/server-renderer": "3.5.14",
+      "@vue/shared": "3.5.14",
+      "vue": "3.5.14"
+    },
+    "patchedDependencies": {}
+  },
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"
+}

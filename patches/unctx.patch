@@ -1,0 +1,39 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 20baf5cacd1de8008b43f8808bd0ce8beb8a573d..6265c204aee8b8119287aaf8f8739c3970906b9c 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -15,11 +15,13 @@ function createContext(opts = {}) {
+       console.warn("[unctx] `AsyncLocalStorage` is not provided.");
+     }
+   }
++  const _wrapInstance = (instance) => als ? { __unctx_weak: new WeakRef(instance) } : instance;
++  const _unwrapInstance = (instance) => instance?.__unctx_weak ? instance.__unctx_weak.deref() : instance;
+   const _getCurrentInstance = () => {
+     if (als) {
+-      const instance = als.getStore();
+-      if (instance !== void 0) {
+-        return instance;
++      const store = als.getStore();
++      if (store !== void 0) {
++        return _unwrapInstance(store);
+       }
+     }
+     return currentInstance;
+@@ -50,7 +52,7 @@ function createContext(opts = {}) {
+       checkConflict(instance);
+       currentInstance = instance;
+       try {
+-        return als ? als.run(instance, callback) : callback();
++        return als ? als.run(_wrapInstance(instance), callback) : callback();
+       } finally {
+         if (!isSingleton) {
+           currentInstance = void 0;
+@@ -65,7 +67,7 @@ function createContext(opts = {}) {
+       const onLeave = () => currentInstance === instance ? onRestore : void 0;
+       asyncHandlers.add(onLeave);
+       try {
+-        const r = als ? als.run(instance, callback) : callback();
++        const r = als ? als.run(_wrapInstance(instance), callback) : callback();
+         if (!isSingleton) {
+           currentInstance = void 0;
+         }
