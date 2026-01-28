@@ -1,6 +1,10 @@
 # Nuxt Minimal Starter
 
-
+## Setup
+```
+pnpm install
+pnpm run debug
+```
 ## Test
 
 Run: 
